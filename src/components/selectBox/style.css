@@ -1,0 +1,29 @@
+
+.chord-picker {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+}
+
+.chord-picker button {
+    width: 60%;
+    height: 50px;
+    margin: 0 auto;
+    background: rgb(207, 207, 207);
+    font-size: 130%;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    
+}
+.img-div {
+    background: #ffffffc9;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-left: 55px;
+    height: 310px;
+    border-radius: 10px;
+}

@@ -1,0 +1,105 @@
+.window-div {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 2px;
+}
+.body-div {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),  url('images/skullCrusher.jpg'); 
+  background-position: center;
+  background-size: cover;
+}
+header {
+  height: 80px;
+  width: 100%;
+  background: rgb(121, 121, 121);
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+
+}
+
+.container select {
+  width: 400px;
+  height: 80px;
+  font-size: 200%;
+  background: pink;
+  border: 3px solid #6d6d6d;
+  border-radius: 4px;
+  padding-left: 30px;
+ 
+}
+
+.container img {
+  height: 300px;
+  margin: 0 auto;
+}
+
+footer {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 100px;
+background: rgb(121, 121, 121);
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+footer p {
+  color: white;
+  margin: 40px auto 40px auto;
+  width: 300px;
+
+}
+
+.left-col {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.center-col {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.center-col button {
+  width: 60%;
+  height: 200px;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 2px;
+  font-size: 300%;
+  margin: 0 auto;
+  background: #23f707;
+  border: none;
+  border-radius: 5px;
+}
+
+.right-col {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.hero-box {
+  height: 400px;
+
+}
+
+.header-box {
+  color: white;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-box h1 {
+  font-size: 350%;
+}
+

@@ -3,22 +3,28 @@ import logo from './logo.svg';
 import './reset.css';
 import './App.css';
 import axios from 'axios';
-import SelectBox from './components/selectBox/SelectBox'
-import Header from './components/header/Header'
+import SelectBox from './components/selectBox/SelectBox';
+import Header from './components/header/Header';
+import chordObj from './chordObj';
+import Song from './components/song/Song'
 
 class App extends Component {
+
 
   constructor() {
     super();
     // this.headers = 'Guitarparty-Api-Key: d9faf2e82be03a79b923ef1e32d8cc5526021541'
     this.state = {
       chord: '',
-      value: 'C'
+      value: 'C',
+      songChords: []
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
-    
+    this.songClick = this.songClick.bind(this)
   }
+
+
 
   handleClick() {
     const chordId = this.state.value
@@ -32,19 +38,36 @@ class App extends Component {
 }
 
 handleChange(e) {
+  // console.log('target', e.target.value)
           this.setState({
             value: e.target.value
-          })
-      }
+          }) 
+          // console.log('target', e.target.value)
+      }    
+  
+songClick() {
+  // console.log('Imported Chord Value', chordObj[this.state.value])
+  axios.post('/data', {value: chordObj[this.state.value]})
+    .then(res => {
+      // console.log(res.data)
+      this.setState({
+        songChords : res.data
+      })
+      // console.log(this.state.songChords)
+    })
+    // console.log?('It Worked!!!', this.state.songChords)
+}
 
 
 
   render() {
-    console.log(this.state.value)
+    // console.log('Render Called', this.state.value)
+    // console.log(this.state.value)
+  
     return (
       <div className="window-div">
         <div className="body-div">
-          <Header/>
+
           <div className="container">
 
             <div className="left-col">
@@ -66,23 +89,26 @@ handleChange(e) {
               </div>
               
  
-              <button>Add this chord to your song</button>
+              <button onClick={this.songClick}>Add this chord to your song!</button>
               
             </div>
 
             <div className="right-col">
               <div className="header-box">
                 <h1>Write-a-Song</h1>
-                </div>
-                <div className="img-box">
+              </div>
+                <div className="song-box">
+                <Song
+                chords={this.state.songChords}
+                />
               </div>
             </div>
 
           </div>
         </div>
-        <footer>
+        {/* <footer>
           <p>&copy; ChordFinder 2018</p>
-        </footer>
+        </footer> */}
       </div>
     );
   }

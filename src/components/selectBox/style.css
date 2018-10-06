@@ -19,6 +19,9 @@
     margin-bottom: 20px;
     
 }
+.chord-picker select {
+    width: 100%;
+}
 .img-div {
     background: #ffffffc9;
     width: 100%;
@@ -26,4 +29,11 @@
     padding-left: 55px;
     height: 310px;
     border-radius: 10px;
+    position: relative
+}
+
+.img-div img {
+    width: 275px;
+    position: absolute;
+    left: 10px;
 }

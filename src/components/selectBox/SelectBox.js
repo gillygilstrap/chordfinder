@@ -5,6 +5,7 @@ import './style.css'
 
 export default function SelectBox (props) {
     return (
+        
         <div className="chord-picker">
             <button onClick={(e) => props.clickFunc(e)}>Get the chord!!!</button>
             <select value={props.value} onChange={(e) => props.changeFunc(e)} >
@@ -27,11 +28,11 @@ export default function SelectBox (props) {
                     <option value="Em">e Minor</option>
                     <option value="Fm">f Minor</option>
                     <option value="Gm">g Minor</option>
-                    <option value="A#m">a#/bb Minor</option>
-                    <option value="C#m">c# Minor</option>
-                    <option value="D#m">d#/eb Minor</option>
-                    <option value="G#m">g#/ab Minor</option>
-                    <option value="F#m">A Minor</option>
+                    <option value="Bbm">a#/bb Minor</option>
+                    <option value="Dbm">c#/db Minor</option>
+                    <option value="Ebm">d#/eb Minor</option>
+                    <option value="Abm">g#/ab Minor</option>
+                    <option value="Gbm">gb/f# Minor</option>
                     <option value="A7">A7</option>
                     <option value="B7">B7</option>
                     <option value="C7">C7</option>
@@ -49,6 +50,7 @@ export default function SelectBox (props) {
                 <br/>
                 <div className="img-div">
                     <img src={props.chord} alt=""/>
+                    <div className="hack-div"></div>
                 </div>
         </div>
     )

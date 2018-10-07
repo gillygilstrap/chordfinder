@@ -11,7 +11,7 @@ app.get('/data', (req,res) => {
     res.status(200).send(data)
 })
 app.post('/data', songController.addChord);
-
+app.delete('/data', songController.deleteSong)
 
 const PORT = 4006;
 app.listen(PORT, () => console.log('Server is listening on port 4006'));

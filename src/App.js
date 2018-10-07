@@ -7,6 +7,8 @@ import SelectBox from './components/selectBox/SelectBox';
 import Header from './components/header/Header';
 import chordObj from './chordObj';
 import Song from './components/song/Song'
+import Button from './components/button/Button'
+import SongNamer from './components/songNamer/SongNamer'
 
 class App extends Component {
 
@@ -16,12 +18,13 @@ class App extends Component {
     // this.headers = 'Guitarparty-Api-Key: d9faf2e82be03a79b923ef1e32d8cc5526021541'
     this.state = {
       chord: '',
-      value: 'C',
+      value: 'A',
       songChords: []
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.songClick = this.songClick.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
 
@@ -57,6 +60,19 @@ songClick() {
     })
     // console.log?('It Worked!!!', this.state.songChords)
 }
+
+  handleDelete() {
+ 
+    axios.delete('/data')
+    .then(res => {
+      console.log("Is this empty???", res.data)
+      this.setState({
+        songChords: res.data
+      })
+    })
+    
+  }
+
 
 
 
@@ -97,11 +113,19 @@ songClick() {
               <div className="header-box">
                 <h1>Write-a-Song</h1>
               </div>
-                <div className="song-box">
-                <Song
-                chords={this.state.songChords}
-                />
+              <div className="namer-box">
+                <SongNamer/>
               </div>
+                <div className="song-box">
+                  <Song
+                  chords={this.state.songChords}
+                  />
+                </div>
+                <Button
+                click={this.handleDelete}
+                name="Delete this Song"
+                
+                />
             </div>
 
           </div>
@@ -117,56 +141,3 @@ songClick() {
 export default App;
 
 
-// .catch(e => console.log(e))
-/* <div className="full-body">
-
-<header>
-
-</header>
-<div className="container">
-  <h1>Tell me my fortune</h1>
-  <select value={this.state.value} onChange={this.changeChordValue} >
-    <option value="A">A Major</option>
-    <option value="B">B Major</option>
-    <option value="C">C Major</option>
-    <option value="D">D Major</option>
-    <option value="E">E Major</option>
-    <option value="F">F Major</option>
-    <option value="G">G Major</option>
-    <option value="Ab">Ab Major</option>
-    <option value="Bb">Bb Major</option>
-    <option value="Db">Db/C# Major</option>
-    <option value="Eb">Eb Major</option>
-    <option value="Gb">Gb/F# Major</option>
-    <option value="Am">a Minor</option>
-    <option value="Bm">b Minor</option>
-    <option value="Cm">c Minor</option>
-    <option value="Dm">d Minor</option>
-    <option value="Em">e Minor</option>
-    <option value="Fm">f Minor</option>
-    <option value="Gm">g Minor</option>
-    <option value="A#m">a#/bb Minor</option>
-    <option value="C#m">c# Minor</option>
-    <option value="D#m">d#/eb Minor</option>
-    <option value="G#m">g#/ab Minor</option>
-    <option value="F#m">A Minor</option>
-    <option value="A7">A7</option>
-    <option value="B7">B7</option>
-    <option value="C7">C7</option>
-    <option value="D7">D7</option>
-    <option value="E7">E7</option>
-    <option value="F7">F7</option>
-    <option value="G7">G7</option>
-    <option value="Ab7">Ab7</option>
-    <option value="Bb7">Bb7</option>
-    <option value="Db7">Db7/C#7</option>
-    <option value="Eb7">Eb7</option>
-    <option value="Gb7">Gb7/F#7</option>
-  </select>
-  <button onClick={() => this.fetchData()}>Get the chord!!!</button>
-  <p> {this.state.fortune} </p>
-  <button>Get a Chord!</button>
-  <br/>
-  <img src={this.state.chord} alt=""/>
-</div>  
-</div> */

@@ -1,5 +1,6 @@
-const chordList = [];
-let id = 0;
+let chordList = [];
+let id = 1;
+
 // const chordList = [{value: 'a minor', id = 0}]
 module.exports = {
     addChord: (req , res) => {
@@ -11,7 +12,13 @@ module.exports = {
         };
         id = id + 1;
         chordList.push(newChord);
-        console.log('Did it Work??', chordList)
+        // console.log('Did it Work??', chordList)
+        res.json(chordList)
+    },
+
+    deleteSong: (req, res) => {
+        chordList.splice(0,(chordList.length))
+        console.log(chordList)
         res.json(chordList)
     }
 }

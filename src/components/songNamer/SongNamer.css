@@ -1,0 +1,28 @@
+.name-box {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 10px;
+    margin-top: -40px;
+    align-items: center;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+
+}
+
+.name-box h2 {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    height: 30px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 140%;
+    color: #23f707;
+}    
+.name-box input {
+    width: 100%;
+    margin-top: 16px;
+}

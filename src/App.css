@@ -96,7 +96,23 @@ footer p {
 }
 .hero-box {
   height: 400px;
-
+  display: flex;
+  flex-direction: column;
+}
+.hero-box img {
+  height: 284px;
+  border-radius: 3px;
+  margin-top: 16px;
+}
+.hero-box button{
+  background: rgba(255, 255, 0, 0.911);
+  height: 60px;
+  font-size: 100%;
+  transition: 0.3s;
+  margin-top: 16px;
+}
+.hero-box button:hover {
+  background: rgb(255, 255, 0)
 }
 
 .header-box {

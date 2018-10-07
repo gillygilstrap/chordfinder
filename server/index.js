@@ -7,10 +7,9 @@ app.use(bodyParser.json());
 
 
 
-app.get('/data', (req,res) => {
-    res.status(200).send(data)
-})
+app.get('/data', songController.guitarGetter)
 app.post('/data', songController.addChord);
+app.put('/data', songController.updateSongName);
 app.delete('/data', songController.deleteSong)
 
 const PORT = 4006;

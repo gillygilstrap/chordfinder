@@ -1,0 +1,14 @@
+button {
+    height: 40px;
+    background: #23f707b2;
+    margin-top: 16px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 140%
+}
+button:hover {
+    background: #23f707ec;
+    border: 3px solid #6D6D6D;
+  }

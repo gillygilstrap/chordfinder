@@ -19,12 +19,14 @@ class App extends Component {
     this.state = {
       chord: '',
       value: 'A',
-      songChords: []
+      songChords: [],
+      guitarUrl: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.songClick = this.songClick.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+    this.guitarGetter = this.guitarGetter.bind(this)
   }
 
 
@@ -46,8 +48,8 @@ handleChange(e) {
             value: e.target.value
           }) 
           // console.log('target', e.target.value)
-      }    
-  
+      } 
+      
 songClick() {
   // console.log('Imported Chord Value', chordObj[this.state.value])
   axios.post('/data', {value: chordObj[this.state.value]})
@@ -68,6 +70,16 @@ songClick() {
       console.log("Is this empty???", res.data)
       this.setState({
         songChords: res.data
+      })
+    })
+    
+  }
+
+  guitarGetter() {
+    axios.get('/data')
+    .then(res => {
+      this.setState({
+        guitarUrl: res.data
       })
     })
     
@@ -101,7 +113,11 @@ songClick() {
 
             <div className="center-col">
               <div className="hero-box">
-
+                <img src={this.state.guitarUrl} alt=""/>
+                <Button
+                click={this.guitarGetter}
+                name="Get a random guitar!"
+                />
               </div>
               
  

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './reset.css';
 import './App.css';
 import axios from 'axios';
@@ -27,6 +26,18 @@ class App extends Component {
     this.handleDelete = this.handleDelete.bind(this)
     this.guitarGetter = this.guitarGetter.bind(this)
   }
+  
+
+  // componentDidMount() {
+  //   axios.get(`http://api.guitarparty.com/v2/chords/?query=${this.state.value}`,{headers: {
+  //       'Guitarparty-Api-Key': 'd9faf2e82be03a79b923ef1e32d8cc5526021541'}})
+  //   .then(res => {
+  //       this.setState({
+  //           chord: res.data.objects[0].image_url
+  //       })
+  //   })
+
+  // }
 
 
 
@@ -84,6 +95,16 @@ songClick() {
     
   }
 
+  componentDidMount() {
+    axios.get('/data/chords')
+    .then(res => {
+      // console.log('Comp did mount test', res.data)
+      this.setState({
+        songChords: res.data
+      })
+      this.handleClick()
+    })
+  }
 
 
 
@@ -120,7 +141,7 @@ songClick() {
               </div>
               
  
-              <button className="big-btn" onClick={this.songClick}>Add this chord to your song!</button>
+              <button className="big-btn" onClick={this.songClick}>Add this <span>chord</span> to your song<span>!</span></button>
               
             </div>
 

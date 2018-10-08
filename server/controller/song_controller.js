@@ -43,12 +43,20 @@ module.exports = {
     },
     updateSongName: (req,res) => {
         let songName = req.body.tempVar
+        newSongName = songName;
         res.json(songName)
 
     },
     guitarGetter: (req,res) => {
         let i = Math.floor(Math.random() * guitars.length)
         res.json(guitars[i])
+    },
+    getCurrentSong: (req,res) => {
+        // consol.log(req)
+        res.json(chordList)
+    },
+    getCurrentName: (req,res) => {
+        res.json(newSongName)
     }
 }
 //------------------------------------------------

@@ -16,11 +16,11 @@ class SongNamer extends Component {
         //  this.stateCleaner = this.stateCleaner.bind(this)
      }
 
-handleChange(e) {
-    this.setState({
-        songName: e.target.value
-    })
-}
+    handleChange(e) {
+        this.setState({
+            songName: e.target.value
+        })
+    }
 
 // stateCleaner() {
 //     this.setState({
@@ -28,27 +28,36 @@ handleChange(e) {
 //     })
 // }
 
-clickTitle = () => {
-    let tempVar = this.state.songName;
-    this.setState({
-        songTitle: tempVar,
-        songName: ''
-    })
+    clickTitle = () => {
+        let tempVar = this.state.songName;
+        this.setState({
+            songTitle: tempVar,
+            songName: ''
+        })
 
 
-}
+    }
 
-updateTitle() {
-    let tempVar = this.state.songName
-    axios.put('/data',{tempVar: tempVar})
-    .then(res => {
-       this.setState({
-           songTitle: res.data,
-           songName: ''
-           
-       })
-    })
-}
+    updateTitle() {
+        let tempVar = this.state.songName
+        axios.put('/data',{tempVar: tempVar})
+        .then(res => {
+        this.setState({
+            songTitle: res.data,
+            songName: ''
+            
+        })
+        })
+    }
+
+    componentDidMount() {
+        axios.get('/data/song')
+        .then(res => {
+            this.setState({
+                songTitle: res.data
+            })
+        })
+    }
 
   render() {
 

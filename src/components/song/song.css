@@ -1,3 +1,11 @@
 * {
     list-style-type: none;;
 }
+
+.chord-num {
+    color: #23f707 !important;
+}
+
+span {
+    color: #23f707 !important;
+}

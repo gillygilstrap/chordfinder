@@ -5,8 +5,8 @@ const songController = require('./controller/song_controller');
 const app = express();
 app.use(bodyParser.json());
 
-
-
+app.get('/data/song', songController.getCurrentName)
+app.get('/data/chords', songController.getCurrentSong)
 app.get('/data', songController.guitarGetter)
 app.post('/data', songController.addChord);
 app.put('/data', songController.updateSongName);

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './reset.css';
-import './style.css'
+import './selectbox.css'
 
 
 export default function SelectBox (props) {
     return (
         
         <div className="chord-picker">
-            <button onClick={(e) => props.clickFunc(e)}>Get the chord!!!</button>
-            <select value={props.value} onChange={(e) => props.changeFunc(e)} >
+            <button class="select-btn" onClick={(e) => props.clickFunc(e)}>Get the chord!!!</button>
+            <select class="select-box" value={props.value} onChange={(e) => props.changeFunc(e)} >
                 <option value="A">A Major</option>
                     <option value="B">B Major</option>
                     <option value="C">C Major</option>

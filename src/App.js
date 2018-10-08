@@ -4,7 +4,6 @@ import './reset.css';
 import './App.css';
 import axios from 'axios';
 import SelectBox from './components/selectBox/SelectBox';
-import Header from './components/header/Header';
 import chordObj from './chordObj';
 import Song from './components/song/Song'
 import Button from './components/button/Button'
@@ -121,7 +120,7 @@ songClick() {
               </div>
               
  
-              <button onClick={this.songClick}>Add this chord to your song!</button>
+              <button className="big-btn" onClick={this.songClick}>Add this chord to your song!</button>
               
             </div>
 

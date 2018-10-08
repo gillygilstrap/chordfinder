@@ -21,8 +21,25 @@
     margin-top: 10px;
     font-size: 140%;
     color: #23f707;
+    /* text-shadow: 3px 1px 8px #525151 */
+    text-shadow: 2px 2px 8px #525252;
 }    
 .name-box input {
     width: 100%;
     margin-top: 16px;
+    height: 30px;
+    padding-left: 7px;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: 3px solid #23f707;
+    background: #2c2c2c;
+    color: #d1cfcf;
+}
+.name-box input:focus {
+    outline: none;
+}
+
+.name-box input::placeholder {
+
 }

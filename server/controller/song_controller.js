@@ -6,7 +6,16 @@ let guitars = [
     "https://www.summerhaysmusic.com/wp-content/uploads/2016/06/Mikro-electric-guitar.jpg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj1PUmLXUHSOwrsWi--Vy69Nwg2QSyUxv9TuWKHC-rGBaCh3k-0Q",
     "https://images-na.ssl-images-amazon.com/images/I/41UvBXvBC3L._SY450_.jpg",
+    "https://shop.r10s.jp/kurosawastore/cabinet/ikou_20091014_003/esp4515303262827.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDJ8e5BPNP7u2kca3-A1YON290_IFXtwuZKGTYO39f0XUqnSai7Q",
+    "https://cdn.shopify.com/s/files/1/1391/6197/products/g1_6.jpg?v=1507728136",
+    "https://www.fmicassets.com/Damroot/GuitarVert1/10001/2916501503_gtr_frt_001_rr.png",
+    "https://cdn.shopify.com/s/files/1/0657/6821/products/VAU-ST1RW-BLK_grande.jpg?v=1533906981",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN-57D4IYgRz87l4q20gwGr8CYbIJK0IR5ecNl2dmGHazJLG-HCyffV-E",
+    "https://www.pricestage.com/wp-content/uploads/2018/01/yamaha-pacifica-series-pac112v-electric-guitar-old-violin-sunburst-2.jpg",
     ]
+
+
 let chordList = [];
 let newSongName = ''
 let id = 1;
@@ -38,7 +47,7 @@ module.exports = {
 
     },
     guitarGetter: (req,res) => {
-        let i= Math.floor(Math.random() * guitars.length)
+        let i = Math.floor(Math.random() * guitars.length)
         res.json(guitars[i])
     }
 }

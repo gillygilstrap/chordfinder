@@ -1,6 +1,7 @@
 button {
     height: 40px;
-    background: #23f707b2;
+    /* background: #23f707b2; */
+    background: #23f707ec;
     margin-top: 16px;
     border: none;
     border-radius: 5px;
@@ -11,4 +12,9 @@ button {
 button:hover {
     background: #23f707ec;
     border: 3px solid #6D6D6D;
+    cursor: pointer;
+  }
+
+  button:focus {
+      outline: none;
   }
